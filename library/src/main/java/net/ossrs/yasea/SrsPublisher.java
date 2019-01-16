@@ -22,6 +22,7 @@ public class SrsPublisher {
 
     private SrsCameraView mCameraView;
 
+    private boolean sendVideoOnly = false;
     private boolean sendAudioOnly = false;
     private int videoFrameCount;
     private long lastTimeMillis;
@@ -92,11 +93,20 @@ public class SrsPublisher {
                 android.os.Process.setThreadPriority(android.os.Process.THREAD_PRIORITY_AUDIO);
                 mic.startRecording();
                 while (!Thread.interrupted()) {
-                    int size = mic.read(mPcmBuffer, 0, mPcmBuffer.length);
-                    if (size <= 0) {
-                        break;
+                    if (sendVideoOnly) {
+                        mEncoder.onGetPcmFrame(mPcmBuffer, mPcmBuffer.length);
+                        try {
+                            // This is trivial...
+                            Thread.sleep(20);
+                        } catch (InterruptedException e) {
+                            break;
+                        }
+                    } else {
+                        int size = mic.read(mPcmBuffer, 0, mPcmBuffer.length);
+                        if (size > 0) {
+                            mEncoder.onGetPcmFrame(mPcmBuffer, size);
+                        }
                     }
-                    mEncoder.onGetPcmFrame(mPcmBuffer, size);
                 }
             }
         });
@@ -239,6 +249,18 @@ public class SrsPublisher {
 
     public void setVideoSmoothMode() {
         mEncoder.setVideoSmoothMode();
+    }
+
+    public void setSendVideoOnly(boolean flag) {
+        if (mic != null) {
+            if (flag) {
+                mic.stop();
+                mPcmBuffer = new byte[4096];
+            } else {
+                mic.startRecording();
+            }
+        }
+        sendVideoOnly = flag;
     }
 
     public void setSendAudioOnly(boolean flag) {

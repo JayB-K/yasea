@@ -6,10 +6,19 @@ Yet Another Stream Encoder for Android
 **Yasea** is an Android streaming client. It encodes YUV and PCM data from
 camera and microphone to H.264/AAC, encapsulates in FLV and transmits over RTMP.
 
+Branch
+------
+
+[non-gpuimage](https://github.com/begeekmyfriend/yasea/tree/non-gpuimage) for Android without GL ES library like development board.
+
+[android-16](https://github.com/begeekmyfriend/yasea/tree/android-16) for Android API 16+.
+
+[aac-hev2](https://github.com/begeekmyfriend/yasea/tree/aac-hev2) for Youtube live broadcast that is not compatible with conventional flash media players.
+
 Feature
 -------
 
-- [x] Android mini API 16.
+- [x] Android mini API 21.
 - [x] H.264/AAC hard encoding.
 - [x] H.264 soft encoding.
 - [x] RTMP streaming with state callback handler.
@@ -27,17 +36,23 @@ Remember to modify the URL by yourself. Have fun!
 
 **NOTE** if you feel high latency, please check your bandwidth limits and player buffering.
 
-<img src="http://ww2.sinaimg.cn/mw690/a16d768bgw1f9euw0n7fyj20u01hc48t.jpg" height="450px" >
-<img src="http://ww3.sinaimg.cn/mw690/a16d768bgw1f9euwdtmn7j20u01hck3u.jpg" height="450px" >
-<img src="http://ww1.sinaimg.cn/mw690/a16d768bgw1f9euwg3jfxj20u01hcgvi.jpg" height="450px" >
+<p align='center'>
+    <img src="http://ww2.sinaimg.cn/mw690/a16d768bgw1f9euw0n7fyj20u01hc48t.jpg" height="450px"/>
+    <img src="http://ww3.sinaimg.cn/mw690/a16d768bgw1f9euwdtmn7j20u01hck3u.jpg" height="450px"/>
+    <img src="http://ww1.sinaimg.cn/mw690/a16d768bgw1f9euwg3jfxj20u01hcgvi.jpg" height="450px"/>
+</p>
 
-<img src="http://ww4.sinaimg.cn/mw690/a16d768bgw1f9euwbo9s9j20u01hcgwq.jpg" height="450px" >
-<img src="http://ww1.sinaimg.cn/mw690/a16d768bgw1f9euw3udb3j20u01hcak1.jpg" height="450px" >
-<img src="http://ww2.sinaimg.cn/mw690/a16d768bgw1f9euw8ngn9j20u01hcdqs.jpg" height="450px" >
-
-<img src="http://ww3.sinaimg.cn/mw690/a16d768bgw1f9euwktw04j20u01hcqct.jpg" height="450px" >
-<img src="http://ww4.sinaimg.cn/mw690/a16d768bgw1f9euwiffobj20u01hctix.jpg" height="450px" >
-<img src="http://ww4.sinaimg.cn/mw690/a16d768bgw1f9euw63u4mj20u01hcn88.jpg" height="450px" >
+<p align='center'>
+    <img src="http://ww4.sinaimg.cn/mw690/a16d768bgw1f9euwbo9s9j20u01hcgwq.jpg" height="450px"/>
+    <img src="http://ww1.sinaimg.cn/mw690/a16d768bgw1f9euw3udb3j20u01hcak1.jpg" height="450px"/>
+    <img src="http://ww2.sinaimg.cn/mw690/a16d768bgw1f9euw8ngn9j20u01hcdqs.jpg" height="450px"/>
+</p>
+    
+<p align='center'>
+    <img src="http://ww3.sinaimg.cn/mw690/a16d768bgw1f9euwktw04j20u01hcqct.jpg" height="450px"/>
+    <img src="http://ww4.sinaimg.cn/mw690/a16d768bgw1f9euwiffobj20u01hctix.jpg" height="450px"/>
+    <img src="http://ww4.sinaimg.cn/mw690/a16d768bgw1f9euw63u4mj20u01hcn88.jpg" height="450px"/>
+</p>
 
 Acknowledgements
 ----------------
@@ -45,7 +60,7 @@ Acknowledgements
 
 - [srs-sea](https://github.com/ossrs/srs-sea)
 - [SimpleRtmp](https://github.com/faucamp/SimpleRtmp)
-- [MagicCamera](https://github.com/begeekmyfriend/MagicCamera)
+- [MagicCamera](https://github.com/wuhaoyu1990/MagicCamera)
 - [x264](http://www.videolan.org/developers/x264.html)
 - [mp4parser](https://android.googlesource.com/platform/external/mp4parser)
 
